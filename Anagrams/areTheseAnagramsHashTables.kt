@@ -11,7 +11,7 @@ fun areTheseAnagramsHashTables(s1: String, s2: String): String {
     val freq1 = mutableMapOf<Char, Int>()
     val freq2 = mutableMapOf<Char, Int>()
     if (s1.length != s2.length) {
-        return ("These are not anagram")
+        return ("These are not anagrams")
     }
     else {
         for (chA: Char in s1) {
