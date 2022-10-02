@@ -9,7 +9,7 @@ func main() {
 	fmt.Println("Enter string number 1: ")
 	var stringInput1 string
 	_, _ = fmt.Scan(&stringInput1)
-	fmt.Println("Thanks! Got it!")
+	fmt.Println("Got it. Thanks!")
 	fmt.Println("Enter string number 2: ")
 	var stringInput2 string
 	_, _ = fmt.Scan(&stringInput2)
