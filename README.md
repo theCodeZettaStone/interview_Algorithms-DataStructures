@@ -1,2 +1,2 @@
 # interView_Algorithms
-Algorithms For Coding Interview (MS Word || Google Sheets IDEs not Required)
+Algorithms For Coding Interview (MS Word && || Google Docs IDEs not Required)
