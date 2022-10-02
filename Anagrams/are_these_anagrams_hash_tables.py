@@ -6,24 +6,24 @@ def main():
 
 
 def are_these_anagrams_hash_tables(s1, s2):
-    freq1 = {}
-    freq2 = {}
+    frequency_dictionary1 = {}
+    frequency_dictionary2 = {}
     if len(s1) != len(s2):
         return "These are not anagrams"
     for i in s1:
-        if i in freq1:
-            freq1[i] += 1
+        if i in frequency_dictionary1:
+            frequency_dictionary1[i] += 1
         else:
-            freq1[i] = 1
-    print(dict(sorted(freq1.items())))
+            frequency_dictionary1[i] = 1
+    print(dict(sorted(frequency_dictionary1.items())))
     for i in s2:
-        if i in freq2:
-            freq2[i] += 1
+        if i in frequency_dictionary2:
+            frequency_dictionary2[i] += 1
         else:
-            freq2[i] = 1
-    print(dict(sorted(freq2.items())))
-    for key in freq1.keys():
-        if key not in freq2.keys() or freq1[key] != freq2[key]:
+            frequency_dictionary2[i] = 1
+    print(dict(sorted(frequency_dictionary2.items())))
+    for key in frequency_dictionary1.keys():
+        if key not in frequency_dictionary2.keys() or frequency_dictionary1[key] != frequency_dictionary2[key]:
             return "These are not anagrams"
         return "These are anagrams"
 
