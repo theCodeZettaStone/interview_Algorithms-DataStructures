@@ -8,32 +8,32 @@ fun main() {
 }
 
 fun areTheseAnagramsHashTables(s1: String, s2: String): String {
-    val freq1 = mutableMapOf<Char, Int>()
-    val freq2 = mutableMapOf<Char, Int>()
+    val frequencyMap1 = mutableMapOf<Char, Int>()
+    val frequencyMap2 = mutableMapOf<Char, Int>()
     if (s1.length != s2.length) {
         return ("These are not anagrams")
     }
     else {
         for (chA: Char in s1) {
-            if (chA in freq1) {
-                freq1.merge(chA, 1, Int::plus)
+            if (chA in frequencyMap1) {
+                frequencyMap1.merge(chA, 1, Int::plus)
             }
             else {
-                freq1[chA] = 1
+                frequencyMap1[chA] = 1
             }
         }
-        println(freq1.toList().sortedBy { (key, _) -> key }.toMap())
+        println(frequencyMap1.toList().sortedBy { (key, _) -> key }.toMap())
         for (chB: Char in s2) {
             if (chB in freq2) {
-                freq2.merge(chB, 1, Int::plus)
+                frequencyMap2.merge(chB, 1, Int::plus)
             }
             else {
-                freq2[chB] = 1
+                frequencyMap2[chB] = 1
             }
         }
-        println(freq2.toList().sortedBy { (key, _) -> key }.toMap())
-        for (key: Char in freq1.keys) {
-            if (key !in freq2.keys || freq1[key] != freq2[key]) {
+        println(frequencyMap2.toList().sortedBy { (key, _) -> key }.toMap())
+        for (key: Char in frequencyMap1.keys) {
+            if (key !in frequencyMap2.keys || frequencyMap1[key] != frequencyMap2[key]) {
                 return "These are not anagrams"
             }
         }
