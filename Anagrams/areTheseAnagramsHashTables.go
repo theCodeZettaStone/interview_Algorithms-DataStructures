@@ -17,31 +17,31 @@ func main() {
 }
 
 func areTheseAnagramsHashTables(s1, s2 string) string {
-	var freq1 = map[string]int{}
-	var freq2 = map[string]int{}
+	var frequencyMap1 = map[string]int{}
+	var frequencyMap2 = map[string]int{}
 	if len(s1) != len(s2) {
 		return "These are not anagrams"
 	} else {
 		for _, chr := range s1 {
-			if _, found := freq1[string(chr)]; found {
-				freq1[string(chr)] += 1
+			if _, found := frequencyMap1[string(chr)]; found {
+				frequencyMap1[string(chr)] += 1
 			} else {
-				freq1[string(chr)] = 1
+				frequencyMap1[string(chr)] = 1
 			}
 		}
-		fmt.Println(freq1)
+		fmt.Println(frequencyMap1)
 		for _, chr := range s2 {
-			if _, found := freq2[string(chr)]; found {
-				freq2[string(chr)] += 1
+			if _, found := frequencyMap2[string(chr)]; found {
+				frequencyMap2[string(chr)] += 1
 			} else {
-				freq2[string(chr)] = 1
+				frequencyMap2[string(chr)] = 1
 			}
 		}
-		fmt.Println(freq2)
-		for _, chr := range maps.Keys(freq1) {
-			if _, found := freq2[chr]; found == false {
+		fmt.Println(frequencyMap2)
+		for _, chr := range maps.Keys(frequencyMap1) {
+			if _, found := frequencyMap2[chr]; found == false {
 				return "These are not anagrams"
-			} else if freq1[chr] != freq2[chr] {
+			} else if frequencyMap1[chr] != frequencyMap2[chr] {
 				return "These are not anagrams"
 			}
 		}
