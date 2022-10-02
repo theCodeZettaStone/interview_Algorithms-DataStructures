@@ -15,35 +15,35 @@ function sortObjectByKeys(o) {
 
 
 function areTheseAnagramsHashTables(s1, s2) {
-  let freq1 = new Map()
-  const freq2 = new Map()
+  const frequencyMap1 = new Map()
+  const frequencyMap2 = new Map()
 
   if (s1.length !== s2.length) {
     return ("These are not anagrams")
   }
   else {
     for (const chr of s1) {
-      if (chr in freq1) {
-        freq1[chr] += 1
+      if (chr in frequencyMap1) {
+        frequencyMap1[chr] += 1
       }
       else {
-        freq1[chr] = 1
+        frequencyMap1[chr] = 1
       }
     }
-    const sortedfreq1 = sortObjectByKeys(freq1)
-    console.log(sortedfreq1)
+    const sortedfrequencyMap1 = sortObjectByKeys(frequencyMap1)
+    console.log(sortedfrequencyMap1)
     for (const chr of s2) {
-      if (chr in freq2) {
-        freq2[chr] += 1
+      if (chr in frequencyMap2) {
+        frequencyMap2[chr] += 1
       }
       else {
-        freq2[chr] = 1
+        frequencyMap2[chr] = 1
       }
     }
-    const sortedfreq2 = sortObjectByKeys(freq2)
-    console.log(sortedfreq2)
-    for (const key in freq1.keys) {
-      if (!(key in freq2.keys) || freq1[key] !== freq2[key]) {
+    const sortedfrequencyMap2 = sortObjectByKeys(frequencyMap2)
+    console.log(sortedfrequencyMap2)
+    for (const key in frequenceMap1.keys) {
+      if (!(key in frequencyMap2.keys) || frequencyMap1[key] !== frequencyMap2[key]) {
         return ("These are not anagrams")
       }
     }
