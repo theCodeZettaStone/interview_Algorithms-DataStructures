@@ -3,6 +3,8 @@
 int main(void)
     {
         int start, foo, bar, stop;
+        char Foo[4] = "Foo";
+        char Bar[4] = "Bar";
         foo = 5;
         bar = 7;
         stop = 100;
@@ -11,15 +13,15 @@ int main(void)
             {
                 if (start % foo == 0 && start % bar == 0)
                     {
-                        printf("FooBar\n");
+                        printf("%s%s\n", Foo, Bar);
                     }
                 else if (start % foo == 0)
                     {
-                        printf("Foo\n");
+                        printf("%s\n", Foo);
                     }
                 else if (start % bar == 0)
                     {
-                      printf("Bar\n");
+                      printf("%s\n", Bar);
                     }
                 else
                     {
