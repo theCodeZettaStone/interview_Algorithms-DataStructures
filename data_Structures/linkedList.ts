@@ -1,5 +1,5 @@
 interface linkedListType{
-  head: nodeType;
+  head: null|nodeType;
   addNode: Function;
 }
 
@@ -12,19 +12,19 @@ class node{
   nextNode: null|nodeType;
   value: any;
   constructor(val: any, nN: null=null){
-    value = val;
-    nextNode = nN;
+    this.value = val;
+    this.nextNode = nN;
   }
 }
 
 class linkedList{
   head: null|nodeType;
-  constructor(head: null|nodeType){
+  constructor(head: null|nodeType = null){
     this.head = head;
   }
 
   addNode(nN: nodeType){
-    let formerHeadNode: nodeType = this.head;
+    let formerHeadNode: null|nodeType = this.head;
     this.head = nN;
     this.head.nextNode = formerHeadNode;
   }
